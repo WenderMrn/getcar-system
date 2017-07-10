@@ -16,3 +16,10 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require bootstrap-dashboard/js/tether.min
+//= require bootstrap-dashboard/js/jquery.cookie
+//= require bootstrap-dashboard/js/grasp_mobile_progress_circle-1.0.0.min
+//= require bootstrap-dashboard/js/jquery.nicescroll.min
+//= require bootstrap-dashboard/js/jquery.validate.min
+//= require bootstrap-dashboard/js/charts-home
+//= require bootstrap-dashboard/js/front

@@ -13,4 +13,9 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+@import "bootstrap";
+@import "bootstrap-dashboard/css/style.default";
+@import "bootstrap-dashboard/css/grasp_mobile_progress_circle-1.0.0.min";
+@import "bootstrap-dashboard/css/custom";
+@import "bootstrap-dashboard/css/font-awesome";
+@import "bootstrap-dashboard/icons-reference/styles";
