@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_date: 2017-07-23
+  out_date: 2017-07-23
+  status: 
+  description: MyString
+  price: 9.99
+
+two:
+  entry_date: 2017-07-23
+  out_date: 2017-07-23
+  status: 
+  description: MyString
+  price: 9.99
