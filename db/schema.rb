@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723175834) do
+ActiveRecord::Schema.define(version: 20170729020813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 20170723175834) do
     t.decimal "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "administrator_id"
-    t.index ["administrator_id"], name: "index_clients_on_administrator_id"
   end
 
   create_table "maintenances", force: :cascade do |t|
@@ -44,6 +42,19 @@ ActiveRecord::Schema.define(version: 20170723175834) do
     t.datetime "updated_at", null: false
     t.bigint "vehicle_id"
     t.index ["vehicle_id"], name: "index_maintenances_on_vehicle_id"
+  end
+
+  create_table "rents", force: :cascade do |t|
+    t.datetime "pullout_date"
+    t.datetime "return_date"
+    t.integer "status"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "client_id"
+    t.bigint "vehicle_id"
+    t.index ["client_id"], name: "index_rents_on_client_id"
+    t.index ["vehicle_id"], name: "index_rents_on_vehicle_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170723175834) do
     t.datetime "updated_at", null: false
     t.string "cpf"
     t.string "name"
+    t.string "type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -80,5 +92,7 @@ ActiveRecord::Schema.define(version: 20170723175834) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "clients", "administrators"
+  add_foreign_key "maintenances", "vehicles"
+  add_foreign_key "rents", "clients"
+  add_foreign_key "rents", "vehicles"
 end
