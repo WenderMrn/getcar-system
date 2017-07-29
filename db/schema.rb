@@ -93,6 +93,6 @@ ActiveRecord::Schema.define(version: 20170729020813) do
   end
 
   add_foreign_key "maintenances", "vehicles"
-  add_foreign_key "rents", "clients"
+  add_foreign_key "rents", "users", column: "client_id"
   add_foreign_key "rents", "vehicles"
 end

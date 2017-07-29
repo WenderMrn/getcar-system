@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Administrator.create(name:"Admin da Silva", email: "admin@email.com",password:"123456",cpf:"11111111111")
+Client.create(name:"João da Silva", email: "joao@email.com",password:"123456",cpf:"22222222222")
+Vehicle.create(license_plate:"AAA9999", brand: "Volkswagen",model:"Fusca")

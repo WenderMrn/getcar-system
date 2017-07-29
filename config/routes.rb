@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :clients
-  resources :administrators
+  resources :clients, type: 'Client'
+  resources :administrators, type: 'Administrator'
   resources :vehicles
   resources :maintenances
   
