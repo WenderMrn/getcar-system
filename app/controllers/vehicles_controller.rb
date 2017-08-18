@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
 	def index
-		@vehicles = Vehicle.all
+		@vehicles = Vehicle.page(params[:page])
 	end
 
 	def show
