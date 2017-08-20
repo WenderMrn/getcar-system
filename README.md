@@ -1,5 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/WenderMrn/getcar-system/badges/gpa.svg)](https://codeclimate.com/github/WenderMrn/getcar-system)
 [![Test Coverage](https://codeclimate.com/github/WenderMrn/getcar-system/badges/coverage.svg)](https://codeclimate.com/github/WenderMrn/getcar-system/coverage)
+[![Issue Count](https://codeclimate.com/github/WenderMrn/getcar-system/badges/issue_count.svg)](https://codeclimate.com/github/WenderMrn/getcar-system)
 
 # GetcarSystem
 
