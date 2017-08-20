@@ -13,6 +13,7 @@
 		<div class="container-fluid">
 			<div class="card padding">
 				<h3 class="card-header text-uppercase"><%= @vehicle.model %></h3>
+					<%= image_tag "car-default.png", class: "card-img-top vehicle-show", alt: "veículo" %>	
 				<div class="row card-block">
 					<div class="col-md-3">
 						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Marca</h4>
@@ -46,7 +47,7 @@
 					</div>
 				</div>
 				<section class="buttons-section">
-					<a href="#" class="btn btn-secondary col-md-1">Voltar</a>
+					<%= link_to "Voltar", :back , class: "btn btn-secondary col-md-1" %>
 					<a href="#" class="btn btn-primary col-md-1">Editar</a>	
 				</section>
 			</div>

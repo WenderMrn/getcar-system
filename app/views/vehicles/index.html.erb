@@ -32,7 +32,7 @@
           <!-- Monthly Usage-->
           <div class="wrapper data-usage">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <h2 class="display h4 text-uppercase"><%= vehicle.model %></h2>
               </div>
               <div class="col-md-6">
@@ -41,10 +41,7 @@
             </div>
             <div class="row d-flex align-items-center">
               <div class="col-sm-6">
-                <!-- image to test -->
-                <i class="fa fa-car" aria-hidden="true" style="font-size:5em;"></i>
-                <!-- image real -->
-                <!--<img src="..." class="rounded float-left" alt="car" height="100%" width="100%"/>-->
+                <%= image_tag "car-default.png", class: "card-img-top vehicle-index", alt: "veículo" %>
               </div>
               <div class="col-sm-6">
                 <small class="text-uppercase">Marca</small><span><%= vehicle.brand %></span>
