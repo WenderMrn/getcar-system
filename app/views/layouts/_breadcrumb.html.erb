@@ -1,0 +1,17 @@
+<div class="breadcrumb-holder">
+  <div class="container-fluid">
+    <ul class="breadcrumb">
+    	<% sequence.each do |value| %>
+    		<% if value != sequence.last %>
+					<li class="breadcrumb-item">
+      			<a href="#"><%= value.to_s.capitalize %></a>
+      		</li>
+    		<% else %>
+    			<li class="breadcrumb-item active">
+      			<%= value.to_s.capitalize %>
+      		</li>
+    		<% end %>
+			<% end %>
+    </ul>
+  </div>
+</div>

@@ -1,1 +1,63 @@
-<h1>Veículos</h1>
+<%= render 'layouts/breadcrumb', sequence: [:home, :veículo] %>
+<div class="container">
+	<section class="dashboard-counts section-padding">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="d-flex align-items-center col-md-12">
+					<h4 class="display display text-uppercase text-primary"><i class="fa fa-car" aria-hidden="true"></i> Veículo</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-no-padding-bottom">
+		<div class="container-fluid">
+			<div class="card padding">
+				<div class="row align-items-center">
+					<div class="col-md-5">
+						<h1 class="text-uppercase display-1 vehicle-show-model"><%= @vehicle.model %></h1>
+					</div>
+					<div class="col-md-5">
+						<%= image_tag "car-default.png", class: "card-img-top vehicle-show", alt: "veículo" %>
+					</div>	
+				</div>
+				<hr>
+				<div class="row card-block">
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Marca</h4>
+						<p class="card-text"><%= @vehicle.brand %></p>
+					</div>
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Placa</h4>
+						<p class="card-text"><%= @vehicle.license_plate %></p>
+					</div>
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Cor</h4>
+						<p class="card-text"><%= @vehicle.color %></p>
+					</div>
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Portas</h4>
+						<p class="card-text"><%= @vehicle.doors_number %></p>
+					</div>			  		
+				</div>
+				<div class="row card-block">
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Chassi</h4>
+						<p class="card-text"><%= @vehicle.chassi %></p>
+					</div>
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Renavam</h4>
+						<p class="card-text"><%= @vehicle.renavam %></p>
+					</div>
+					<div class="col-md-3">
+						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Ano</h4>
+						<p class="card-text"><%= @vehicle.year %></p>
+					</div>
+				</div>
+				<section class="buttons-section">
+					<%= link_to "Voltar", :back , class: "btn btn-secondary col-md-1" %>
+					<a href="#" class="btn btn-primary col-md-1">Editar</a>	
+				</section>
+			</div>
+		</div>
+	</section>
+</div>
