@@ -2,14 +2,7 @@
 <div class="container">
   <section class="dashboard-counts section-padding">
     <div class="container-fluid">
-      <div class="row">
-        <div class="d-flex align-items-center col-md-12">
-        <h4 class="display display text-uppercase text-primary">Veículos</h1>
-        </div>
-      </div>
-    </div>
-  </section>
-  <form>
+      <form>
     <div class="form-group row justify-content-center">
       <div class="col-sm-10">
         <div class="form-group">
@@ -23,6 +16,8 @@
       </div>
     </div>
   </form>
+    </div>
+  </section>
   <section class="statistics section-no-padding-bottom">
     <div class="container-fluid">
       <div class="row d-flex align-items-stretch">
@@ -41,10 +36,7 @@
             </div>
             <div class="row d-flex align-items-center">
               <div class="col-sm-6">
-                <!-- image to test -->
-                <i class="fa fa-car" aria-hidden="true" style="font-size:5em;"></i>
-                <!-- image real -->
-                <!--<img src="..." class="rounded float-left" alt="car" height="100%" width="100%"/>-->
+                <%= image_tag "car-default.png", class: "card-img-top vehicle-index", alt: "veículo" %>
               </div>
               <div class="col-sm-6">
                 <small class="text-uppercase">Marca</small><span><%= vehicle.brand %></span>
