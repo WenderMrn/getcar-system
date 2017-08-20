@@ -8,3 +8,18 @@
 .rent-price{
 	font-size:1.1em !important;
 }
+
+.invisible-link{
+	color: currentColor;
+  text-decoration: none;
+}
+
+.invisible-link:hover 
+{ 
+  text-decoration:none; 
+  cursor:pointer;  
+}
+
+.card-block{
+	padding: 13px;
+}
