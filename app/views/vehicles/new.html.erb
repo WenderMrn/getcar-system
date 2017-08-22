@@ -16,10 +16,10 @@
 				<h2 class="h5 display display">Dados do Veículo</h2>
 				</div>
 				<div class="card-block">
-					<%= form_for :livro, url: vehicles_path do |f| %>
+					<%= form_for :vehicle, url: vehicles_path do |f| %>
 						<%= render 'vehicle', f: f %>
 						<%= f.submit "Salvar", class: "btn btn-primary" %>
-		        <%= link_to "Voltar", vehicles_path, class: "btn btn-outline-secondary" %>
+		        <%= link_to "Voltar", vehicles_path, class: "btn btn-secondary" %>
 					<% end %>
 				</div>
 			</div>
