@@ -18,7 +18,7 @@
 					</div>
 					<div class="col-md-5">
 						<%= image_tag "car-default.png", class: "card-img-top vehicle-show", alt: "veículo" %>
-					</div>	
+					</div>
 				</div>
 				<hr>
 				<div class="row card-block">
@@ -37,7 +37,7 @@
 					<div class="col-md-3">
 						<h4 class="card-subtitle mb-2 text-muted text-uppercase">Portas</h4>
 						<p class="card-text"><%= @vehicle.doors_number %></p>
-					</div>			  		
+					</div>
 				</div>
 				<div class="row card-block">
 					<div class="col-md-3">
@@ -55,7 +55,8 @@
 				</div>
 				<section class="buttons-section">
 					<%= link_to "Voltar", vehicles_path, class: "btn btn-secondary" %>
-					<a href="#" class="btn btn-primary col-md-1">Editar</a>	
+					<%= link_to "Editar", edit_vehicle_path, class: "btn btn-primary col-md-1" %>
+
 				</section>
 			</div>
 		</div>

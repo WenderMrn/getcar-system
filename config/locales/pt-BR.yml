@@ -1,4 +1,8 @@
 pt-BR:
+  carvalues: "Valores do Carro"
+  newcar: " Novo Veículo"
+  save: "Salvar"
+  back: "Voltar"
   activerecord:
     models:
       vehicle:
