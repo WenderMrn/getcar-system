@@ -3,6 +3,15 @@ pt-BR:
   newcar: " Novo Veículo"
   save: "Salvar"
   back: "Voltar"
+  logout: "Sair"
+  next: "Proxima"
+  last: "Ultima"
+  forgotpassword: "Esqueceu a senha?"
+  password: "senha"
+  createaccount: "Não tem uma conta?"
+  remember_me: "Lembre de mim."
+  signup: "Crie agora."
+  welcome:  "Bem Vindo ao GetcarSystem, seu sistema de aluguel de carro. Não perca tempo, aqui você seleciona seu carro por um preço acessível!"
   activerecord:
     models:
       vehicle:
