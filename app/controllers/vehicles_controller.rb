@@ -42,7 +42,9 @@ class VehiclesController < ApplicationController
 	def create
 		@vehicle = Vehicle.new(vehicle_param)
 		if @vehicle.save
+			email = 'vicentecorreiacosta@gmail.com'
 			flash[:notice] = t(".success", model: @vehicle.model.upcase)
+			VehicleMailer.new_vehicle(email).deliver_later
 			redirect_to @vehicle
 		else
 			render 'new'
