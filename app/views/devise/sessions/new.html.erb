@@ -4,7 +4,11 @@
           <div class="form-inner">
             <div class="logo text-uppercase"><span>GETCAR</span><strong class="text-primary">SYSTEM</strong></div>
             <p>Acesse seu painel e confira nossas super ofertas. Desfrute de uma das mais modernas frotas.</p>
-            <%= devise_error_messages! %>
+            <div class="row">
+              <% if flash[:alert] %>
+                <div class="col-md-12 alert alert-danger"><%= flash[:alert] %></div>
+              <% end %>
+            </div>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name),id: "login-form") do |f| %>
               <div class="form-group">
                 <%= f.label :email , class: "label-custom" %><br />
@@ -34,4 +38,4 @@
       </div>
     </div>
 
-<%= render "devise/shared/links" %>
+<!--<%= render "devise/shared/links" %>-->

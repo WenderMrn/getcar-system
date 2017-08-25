@@ -31,10 +31,10 @@ class VehiclesController < ApplicationController
 		@vehicle.destroy
 
 		if @vehicle.destroyed?
-			flash[:notice] = "O veículo #{@vehicle.model.upcase} foi deletado com sucesso."
+			flash[:notice] = t(".success", model: @vehicle.model.upcase)
 			redirect_to vehicles_path
 		else
-			flash.now[:alert] = "O veículo #{@vehicle.model.upcase} não pode ser deletado."
+			flash.now[:alert] = t(".error", model: @vehicle.model.upcase)
 			render vehicles_path
 		end
 	end
@@ -42,11 +42,15 @@ class VehiclesController < ApplicationController
 	def create
 		@vehicle = Vehicle.new(vehicle_param)
 		if @vehicle.save
-			flash[:notice] = "O veículo #{@vehicle.model.upcase} foi adicionado com sucesso."
+			flash[:notice] = t(".success", model: @vehicle.model.upcase)
 			redirect_to @vehicle
 		else
 			render 'new'
 		end
+	end
+
+	def search
+		@vehicles = Vehicle.where(model: params[:search]).to_json
 	end
 
 	private

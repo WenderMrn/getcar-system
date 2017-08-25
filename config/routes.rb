@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :administrators, type: 'Administrator'
   resources :vehicles
   resources :maintenances
+
+  post 'vehicles/search', to: 'vehicles#search'
   
 	root 'vehicles#index'
 	
