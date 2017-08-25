@@ -22,7 +22,7 @@ class VehiclesController < ApplicationController
 			redirect_to vehicles_path
 		else
 			flash.now[:alert] = "O veículo #{@vehicle.model.upcase} não pode ser atualizado."
-			render vehicles_path
+			render "edit"
 		end
 	end
 
