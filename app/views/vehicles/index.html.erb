@@ -13,7 +13,7 @@
       <form>
         <div class="form-group row justify-content-center">
           <div class="col-sm-2">
-            <%= link_to "Novo Veículo", new_vehicle_path , class: "btn btn-primary" %>
+            <%= link_to t(".new_vehicle"), new_vehicle_path , class: "btn btn-primary" %>
           </div>
           <div class="col-sm-8">
             <div class="form-group">
@@ -55,9 +55,9 @@
               </div>
             </div>
             <div class="row">
-              <%= link_to "Detalhes", vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
-              <%= link_to 'Editar', edit_vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
-              <%= link_to 'Deletar', { action: :destroy, id: vehicle.id }, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-outline-danger btn-sm btn-action-vehicle" %>
+              <%= link_to t(".detail"), vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
+              <%= link_to t(".edit"), edit_vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
+              <%= link_to t(".deletar"), { action: :destroy, id: vehicle.id }, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-outline-danger btn-sm btn-action-vehicle" %>
             </div>
           </div>
         </div>
