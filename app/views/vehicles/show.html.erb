@@ -1,6 +1,11 @@
 <%= render 'layouts/breadcrumb', sequence: [:home, :veículo] %>
 <div class="container">
 	<section class="dashboard-counts section-padding">
+		<div class="row justify-content-center">
+			<% if flash[:notice] %>
+	   		<div class="col-md-6 alert alert-success"><%= flash[:notice] %></div>
+	  	<% end %>
+  	</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="d-flex align-items-center col-md-12">
