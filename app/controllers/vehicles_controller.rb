@@ -17,7 +17,7 @@ class VehiclesController < ApplicationController
 
 	def update
 		@vehicle = Vehicle.find(params[:id])
-    if @vehicle.update_attributes(vehicle_param)
+	if @vehicle.update_attributes(vehicle_param)
 			flash[:notice] = "O veículo #{@vehicle.model.upcase} foi atualizado com sucesso."
 			redirect_to vehicles_path
 		else
