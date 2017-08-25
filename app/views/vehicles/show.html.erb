@@ -60,7 +60,7 @@
 				</div>
 				<section class="buttons-section">
 					<%= link_to "Voltar", vehicles_path, class: "btn btn-secondary" %>
-					<a href="#" class="btn btn-primary col-md-1">Editar</a>	
+					<%= link_to 'Editar', edit_vehicle_path(id: @vehicle.id), class: "btn btn-primary col-md-1" %>
 				</section>
 			</div>
 		</div>
