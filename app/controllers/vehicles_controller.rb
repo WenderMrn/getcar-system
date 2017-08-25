@@ -49,6 +49,10 @@ class VehiclesController < ApplicationController
 		end
 	end
 
+	def search
+		@vehicles = Vehicle.where(model: params[:search]).to_json
+	end
+
 	private
 	def vehicle_param
 		params.require(:vehicle).permit(:license_plate, :brand, :model, :year, :chassi, :renavam, :color, :doors_number)

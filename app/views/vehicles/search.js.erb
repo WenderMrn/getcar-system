@@ -1,0 +1,18 @@
+var vehicles = JSON.parse('<%= raw @vehicles %>');
+
+if(("<%= raw params[:search] %>").length){
+	$(".vehicles-item").hide();
+
+	$.each(vehicles, function(index,vehicle) {
+
+	  if($("#vehicle-"+vehicle.id).length){
+	    $("#vehicle-"+vehicle.id).show(); 
+		}
+
+	});
+
+	// exibir mesagem informando que a pesquisa não trouxe resultados
+
+}else{
+	$(".vehicles-item").show();
+}
