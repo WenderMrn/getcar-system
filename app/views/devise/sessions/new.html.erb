@@ -3,6 +3,7 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo text-uppercase"><span>GETCAR</span><strong class="text-primary">SYSTEM</strong></div>
+            <p><%= t :welcome %></p>
             <p>Acesse seu painel e confira nossas super ofertas. Desfrute de uma das mais modernas frotas.</p>
             <%= devise_error_messages! %>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name),id: "login-form") do |f| %>
@@ -11,10 +12,17 @@
                 <%= f.email_field :email, autofocus: true ,required: true%>
               </div>
               <div class="form-group">
-                <%= f.label :password , class: "label-custom"%><br />
+                <%= f.label t('password'), class: "label-custom"%><br />
                 <%= f.password_field :password, autocomplete: "off" ,required: true%>
               </div>
               <% if devise_mapping.rememberable? %>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <%= f.check_box :remember_me, class: "form-check-input" %>
+                  <small><%= f.label t('remember_me')%></small> 
+                </label>
+              </div>
+              <%= f.submit "Login", class: "btn btn-primary" %>
                 <div class="form-check">
                   <label class="form-check-label">
                     <%= f.check_box :remember_me, class: "form-check-input" %>
@@ -24,7 +32,7 @@
               <%= f.submit "Login", class: "btn btn-primary" %> 
               <% end %>
               <!-- This should be submit button but I replaced it with <a> for demo purposes-->
-            <% end %><a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a>
+            <% end %><a href="#" class="forgot-pass"><%= t :forgotpassword %></a><small><%= t :createaccount %></small><a href="register.html" class="signup"><%= t :signup %></a>
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>

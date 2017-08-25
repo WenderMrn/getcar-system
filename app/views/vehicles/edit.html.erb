@@ -18,8 +18,8 @@
 				<div class="card-block">
 					<%= form_for @vehicle do |f| %>
 						<%= render 'vehicle', f: f %>
-						<%= f.submit "Salvar", class: "btn btn-primary" %>
-		        <%= link_to "Voltar", vehicles_path, class: "btn btn-secondary" %>
+						<%= f.submit t('save'), class: "btn btn-primary" %>
+		        <%= link_tot('back'), vehicles_path, class: "btn btn-secondary" %>
 					<% end %>
 				</div>
 			</div>
