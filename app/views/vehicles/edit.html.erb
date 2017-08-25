@@ -4,7 +4,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="d-flex align-items-center col-md-12">
-					<h4 class="display display text-uppercase text-primary"><i class="fa fa-car" aria-hidden="true"></i>	<%= t :newcar %></h4>
+					<h4 class="display display text-uppercase text-primary"><i class="fa fa-car" aria-hidden="true"></i> Editar Veículo</h4>
 				</div>
 			</div>
 		</div>
@@ -13,13 +13,13 @@
 		<div class="container-fluid">
 			<div class="card padding">
 				<div class="card-header d-flex align-items-center">
-				<h2 class="h5 display display"><%= t :carvalues %></h2>
+				<h2 class="h5 display display">Dados do Veículo</h2>
 				</div>
 				<div class="card-block">
 					<%= form_for @vehicle do |f| %>
 						<%= render 'vehicle', f: f %>
 						<%= f.submit t('save'), class: "btn btn-primary" %>
-		        <%= link_to t('back'), vehicles_path, class: "btn btn-secondary" %>
+		        <%= link_tot('back'), vehicles_path, class: "btn btn-secondary" %>
 					<% end %>
 				</div>
 			</div>

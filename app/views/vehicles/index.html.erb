@@ -1,6 +1,14 @@
 <%= render 'layouts/breadcrumb', sequence: [:home, :veículos] %>
 <div class="container">
   <section class="dashboard-counts section-padding">
+  <div class="row justify-content-center">
+    <% if flash[:notice] %>
+      <div class="col-md-6 alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="col-md-6 alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+  </div>
     <div class="container-fluid">
       <form>
         <div class="form-group row justify-content-center">
@@ -26,7 +34,7 @@
       <div class="row d-flex align-items-stretch">
         <% @vehicles.each do |vehicle| %>
         <div class="col-lg-4 card-vehicle">
-          <%= link_to vehicle_path(id: vehicle.id), class: "invisible-link" do %>
+         
           <!-- Monthly Usage-->
           <div class="wrapper data-usage">
             <div class="row">
@@ -46,9 +54,12 @@
                 <small class="text-uppercase">Portas</small><span><%= vehicle.doors_number %></span>
               </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <div class="row">
+              <%= link_to "Detalhes", vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
+              <%= link_to 'Editar', edit_vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
+              <%= link_to 'Deletar', { action: :destroy, id: vehicle.id }, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-outline-danger btn-sm btn-action-vehicle" %>
+            </div>
           </div>
-          <% end %>
         </div>
         <% end %>
       </div>
