@@ -1,8 +1,8 @@
 pt-BR:
   views:
     pagination:
-      first: "&laquo;&laquo;"
-      last: "&raquo;&raquo;"
+      first: "&laquo;"
+      last: "&raquo;"
       next: "&rsaquo;"
       previous: "&lsaquo;"
       truncate: "&hellip;"
