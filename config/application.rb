@@ -12,6 +12,11 @@ module GetcarSystem
     config.load_defaults 5.1
     config.i18n.default_locale = "pt-BR"
 
+    #Adicionada a linguagem pt-BR como default
+    config.i18n.default_locale = "pt-BR"
+    I18n.enforce_available_locales = false
+    config.time_zone = "Brasilia"
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
