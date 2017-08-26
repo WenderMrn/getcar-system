@@ -16,10 +16,10 @@
 				<h2 class="h5 display display"><%= t(".vehicle_data") %></h2>
 				</div>
 				<div class="card-block">
-					<%= form_for :vehicle, url: vehicles_path do |f| %>
+					<%= form_for @vehicle do |f| %>
 						<%= render 'vehicle', f: f %>
-		        <%= link_to t(".back"), vehicles_path, class: "btn btn-secondary" %>
-		        <%= f.submit t(".save"), class: "btn btn-primary" %>
+						<%= link_to t(".back"), vehicles_path, class: "btn btn-secondary" %>
+						<%= f.submit t(".update"), class: "btn btn-primary" %>
 					<% end %>
 				</div>
 			</div>

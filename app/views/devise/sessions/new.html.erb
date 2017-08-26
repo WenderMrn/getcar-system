@@ -3,7 +3,12 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo text-uppercase"><span>GETCAR</span><strong class="text-primary">SYSTEM</strong></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+            <p>Acesse seu painel e confira nossas super ofertas. Desfrute de uma das mais modernas frotas.</p>
+            <div class="row">
+              <% if flash[:alert] %>
+                <div class="col-md-12 alert alert-danger"><%= flash[:alert] %></div>
+              <% end %>
+            </div>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name),id: "login-form") do |f| %>
               <div class="form-group">
                 <%= f.label :email , class: "label-custom" %><br />
@@ -14,12 +19,12 @@
                 <%= f.password_field :password, autocomplete: "off" ,required: true%>
               </div>
               <% if devise_mapping.rememberable? %>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <%= f.check_box :remember_me, class: "form-check-input" %>
-                  <%= f.label :remember_me%>
-                </label>
-              </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= f.check_box :remember_me, class: "form-check-input" %>
+                    <%= f.label :remember_me%>
+                  </label>
+                </div>
               <%= f.submit "Login", class: "btn btn-primary" %> 
               <% end %>
               <!-- This should be submit button but I replaced it with <a> for demo purposes-->
@@ -33,4 +38,4 @@
       </div>
     </div>
 
-<!-- <%= render "devise/shared/links" %> -->
+<!--<%= render "devise/shared/links" %>-->

@@ -1,10 +1,15 @@
 <%= render 'layouts/breadcrumb', sequence: [:home, :veículo] %>
 <div class="container">
 	<section class="dashboard-counts section-padding">
+		<div class="row justify-content-center">
+			<% if flash[:notice] %>
+	   		<div class="col-md-6 alert alert-success"><%= flash[:notice] %></div>
+	  	<% end %>
+  	</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="d-flex align-items-center col-md-12">
-					<h4 class="display display text-uppercase text-primary"><i class="fa fa-car" aria-hidden="true"></i> Veículo</h4>
+					<h4 class="display display text-uppercase text-primary"><i class="fa fa-car" aria-hidden="true"></i> <%= t '.page_title' %></h4>
 				</div>
 			</div>
 		</div>
@@ -54,8 +59,8 @@
 					</div>
 				</div>
 				<section class="buttons-section">
-					<%= link_to "Voltar", vehicles_path, class: "btn btn-secondary" %>
-					<a href="#" class="btn btn-primary col-md-1">Editar</a>	
+					<%= link_to t(".back"), vehicles_path, class: "btn btn-secondary" %>
+					<%= link_to t('.edit'), edit_vehicle_path(id: @vehicle.id), class: "btn btn-primary col-md-1" %>
 				</section>
 			</div>
 		</div>

@@ -12,20 +12,51 @@ class VehiclesController < ApplicationController
 	end
 
 	def edit
+		@vehicle = Vehicle.find(params[:id])
+	end
+
+	def update
+		@vehicle = Vehicle.find(params[:id])
+		if @vehicle.update_attributes(vehicle_param)
+			flash[:notice] = "O veículo #{@vehicle.model.upcase} foi atualizado com sucesso."
+			redirect_to vehicles_path
+		else
+			flash.now[:alert] = "O veículo #{@vehicle.model.upcase} não pode ser atualizado."
+			render "edit"
+		end
+	end
+
+	def destroy
+		@vehicle = Vehicle.find(params[:id])
+		@vehicle.destroy
+
+		if @vehicle.destroyed?
+			flash[:notice] = t(".success", model: @vehicle.model.upcase)
+			redirect_to vehicles_path
+		else
+			flash.now[:alert] = t(".error", model: @vehicle.model.upcase)
+			render vehicles_path
+		end
 	end
 
 	def create
 		@vehicle = Vehicle.new(vehicle_param)
+		if @vehicle.save
+			email = 'vicentecorreiacosta@gmail.com'
+			flash[:notice] = t(".success", model: @vehicle.model.upcase)
+			VehicleMailer.new_vehicle(email).deliver_later
+			redirect_to @vehicle
+		else
+			render 'new'
+		end
+	end
 
-    if @vehicle.save
-      redirect_to @vehicle
-    else
-      render 'new'
-    end
+	def search
+		@vehicles = Vehicle.where(model: params[:search]).to_json
 	end
 
 	private
-		def vehicle_param
-			params.require(:vehicle).permit(:license_plate, :brand, :model, :year, :chassi, :renavam, :color, :doors_number)
-		end
+	def vehicle_param
+		params.require(:vehicle).permit(:license_plate, :brand, :model, :year, :chassi, :renavam, :color, :doors_number)
+	end
 end

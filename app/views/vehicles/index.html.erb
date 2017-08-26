@@ -1,32 +1,40 @@
 <%= render 'layouts/breadcrumb', sequence: [:home, :veículos] %>
 <div class="container">
   <section class="dashboard-counts section-padding">
+  <div class="row justify-content-center">
+    <% if flash[:notice] %>
+      <div class="col-md-6 alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="col-md-6 alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+  </div>
     <div class="container-fluid">
-      <form>
         <div class="form-group row justify-content-center">
           <div class="col-sm-2">
-            <%= link_to "Novo Veículo", new_vehicle_path , class: "btn btn-primary" %>
+            <%= link_to t(".new_vehicle"), new_vehicle_path , class: "btn btn-primary" %>
           </div>
           <div class="col-sm-8">
             <div class="form-group">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Pesquisar">
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
-                  </span>
+              <%= form_with url: "vehicles/search", html: {class: "form-control"} do |f| %>
+                <%= f.text_field :search, class:"form-control",placeholder:"Pesquisar" %>
+                <span class="input-group-btn">
+                  <%= f.submit "Pesquisar", class: "btn btn-primary" %>
+                </span>
+              <% end %>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
-      </form>
     </div>
   </section>
   <section class="statistics section-no-padding-bottom">
     <div class="container-fluid">
       <div class="row d-flex align-items-stretch">
         <% @vehicles.each do |vehicle| %>
-        <div class="col-lg-4 card-vehicle">
-          <%= link_to vehicle_path(id: vehicle.id), class: "invisible-link" do %>
+        <div class="col-lg-4 card-vehicle vehicles-item" id="vehicle-<%= vehicle.id %>">
+         
           <!-- Monthly Usage-->
           <div class="wrapper data-usage">
             <div class="row">
@@ -46,9 +54,12 @@
                 <small class="text-uppercase">Portas</small><span><%= vehicle.doors_number %></span>
               </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <div class="row">
+              <%= link_to t(".detail"), vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
+              <%= link_to t(".edit"), edit_vehicle_path(id: vehicle.id), class: "btn btn-outline-success btn-sm btn-action-vehicle" %>
+              <%= link_to t(".deletar"), { action: :destroy, id: vehicle.id }, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-outline-danger btn-sm btn-action-vehicle" %>
+            </div>
           </div>
-          <% end %>
         </div>
         <% end %>
       </div>
